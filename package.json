@@ -3,7 +3,6 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "build": "java -Djava.library.path=./dynamodb_local_latest/DynamoDBLocal_lib -jar ./dynamodb_local_latest/DynamoDBLocal.jar -inMemory",
         "db:create": "node ./config/initializes/tasks/createTable.js && node ./config/initializes/tasks/createInstanceDefault.js",
         "start": "node ./bin/www"
     },
