@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Danh sách sinh viên
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <h1>
+        Danh sách sinh viên
+    </h1>
+
+    <table>
+        <tr>
+            <th>STT</th>
+            <th>Mã sinh viên</th>
+            <th>Tên</th>
+            <th>Ngày sinh</th>
+            <th>Avata</th>
+            <th>Action</th>
+        </tr>
+        <tbody>
+            <% for(var i = 0; i < datas.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= i+1 %>
+                    </td>
+                    <td>
+                        <%= datas[i].maSinhVien %>
+                    </td>
+                    <td>
+                        <%= datas[i].tenSinhVien %>
+                    </td>
+                    <td>
+                        <%= datas[i].ngaySinh %>
+                    </td>
+                    <td>
+                        <img src="<%= datas[i].avatar %>">
+                    </td>
+                    <td>
+                        <form action="/students/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>" method="post">
+                            <button type="submit">DELETE</button>
+                        </form>
+                        <form action="/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
+                            <button type="submit">UPDATE</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    <a href="/new">CREATE NEW STUDENT</a><br>
+</body>
+
+</html>

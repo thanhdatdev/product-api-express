@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Form</title>
+</head>
+
+<body>
+    <form action="/students" method="post">
+        <label>Mã Sinh viên:<input name="masv" type="text" /></label><br/>
+        <label>Tên:<input name="ten" type="text" /></label><br/>
+        <label>Ngày sinh:<input name="ngaysinh" type="text" /></label><br/>
+        <label>Avatar:<input name="avata" type="text" /></label><br/>
+        <input type="submit" value="Save" />
+        <input type="reset" value="Reset" />
+    </form>
+    <input type="button" onclick="location.href='/'" value="Back" />
+</body>
+
+</html>

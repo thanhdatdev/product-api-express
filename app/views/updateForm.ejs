@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Update</title>
+</head>
+
+<body>
+    <form action="/updatestudents/<%= masv %>/<%= ten %>" method="post">
+        <input type="text" name="id" value="<%= id %>" readonly="readonly" />
+        <label>Mã Sinh viên:<input name="masv" type="text" value="<%= masv %>" readonly="readonly"/></label><br/>
+        <label>Tên:<input name="ten" type="text" value="<%= ten %>" readonly="readonly"/></label><br/>
+        <label>Ngày sinh:<input name="ngaysinh" type="text" value="<%= ngaysinh %>"  /></label><br/>
+        <label>Avata:<input name="avata" type="text" value="<%= avata %>" /></label><br/>
+
+
+        <input type="submit" value="Update" />
+        <input type="reset" value="Reset" />
+    </form>
+    <input type="button" onclick="location.href='/'" value="Back" />
+</body>
+
+</html>
