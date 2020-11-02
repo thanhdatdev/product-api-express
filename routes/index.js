@@ -24,7 +24,7 @@ router.post('/students/delete/:maSinhVien/:tenSinhVien', ((req, res) => {
     DATA.deleteItem(maSinhVien, tenSinhVien, res);
 }));
 
-router.post('/students/update/:id/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
+router.get('/students/update/:id/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
     res.render('updateForm', {
         id: req.params.id,
         maSinhVien: req.params.maSinhVien,
