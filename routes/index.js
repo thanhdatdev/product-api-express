@@ -14,8 +14,8 @@ router.post('/students', ((req, res) => {
     let maSinhVien = req.body.maSinhVien;
     let tenSinhVien = req.body.tenSinhVien;
     let ngaySinh = req.body.ngaySinh;
-    let avarta = req.body.avarta;
-    DATA.createItem(maSinhVien, tenSinhVien, ngaySinh, avarta, res);
+    let avatar = req.body.avatar;
+    DATA.createItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
 router.post('/students/:maSinhVien/:tenSinhVien', ((req, res) => {
