@@ -56,7 +56,7 @@ function deleteItem(maSinhVien, tenSinhVien, res) {
     });
 }
 
-function updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, re) {
+function updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res) {
     let params = {
         TableName: 'Students',
         Key: {
