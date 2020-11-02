@@ -8,13 +8,12 @@
 </head>
 
 <body>
-    <form action="/updatestudents/<%= masv %>/<%= ten %>" method="post">
+    <form action="/students/update/<%= maSinhVien %>/<%= tenSinhVien %>" method="post">
         <input type="text" name="id" value="<%= id %>" readonly="readonly" />
-        <label>Mã Sinh viên:<input name="masv" type="text" value="<%= masv %>" readonly="readonly"/></label><br/>
-        <label>Tên:<input name="ten" type="text" value="<%= ten %>" readonly="readonly"/></label><br/>
-        <label>Ngày sinh:<input name="ngaysinh" type="text" value="<%= ngaysinh %>"  /></label><br/>
-        <label>Avata:<input name="avata" type="text" value="<%= avata %>" /></label><br/>
-
+        <label>Mã Sinh viên:<input name="maSinhVien" type="text" value="<%= maSinhVien %>" readonly="readonly"/></label><br/>
+        <label>Tên:<input name="tenSinhVien" type="text" value="<%= tenSinhVien %>" readonly="readonly"/></label><br/>
+        <label>Ngày sinh:<input name="ngaySinh" type="text" value="<%= ngaySinh %>"  /></label><br/>
+        <label>Avata:<input name="avatar" type="text" value="<%= avatar %>" /></label><br/>
 
         <input type="submit" value="Update" />
         <input type="reset" value="Reset" />
