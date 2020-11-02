@@ -6,7 +6,7 @@ router.get('/students', function(req, res) {
     DATA.getAllItem(res);
 });
 
-router.get('/new', ((req, res) => {
+router.get('/students/new', ((req, res) => {
     res.render('createForm', { title: 'Create Form' });
 }));
 
@@ -18,13 +18,13 @@ router.post('/students', ((req, res) => {
     DATA.createItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
-router.post('/students/:maSinhVien/:tenSinhVien', ((req, res) => {
+router.post('/students/delete/:maSinhVien/:tenSinhVien', ((req, res) => {
     let maSinhVien = req.params.maSinhVien;
     let tenSinhVien = req.params.tenSinhVien;
     DATA.deleteItem(maSinhVien, tenSinhVien, res);
 }));
 
-router.post('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
+router.get('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
     res.render('updateForm', {
         maSinhVien: req.params.maSinhVien,
         tenSinhVien: req.params.tenSinhVien,
@@ -34,12 +34,11 @@ router.post('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req
 }));
 
 router.post('/students/update/:maSinhVien/:tenSinhVien', ((req, res) => {
-    let id = req.body.id;
     let maSinhVien = req.params.maSinhVien;
     let tenSinhVien = req.params.tenSinhVien;
     let ngaySinh = req.body.ngaySinh;
     let avatar = req.body.avatar;
-    DATA.updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res);
+    DATA.updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
 module.exports = router;
