@@ -56,19 +56,21 @@ function deleteItem(maSinhVien, tenSinhVien, res) {
     });
 }
 
-function updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res) {
+function updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res) {
     let params = {
         TableName: 'Students',
         Key: {
             "maSinhVien": String(maSinhVien),
             "tenSinhVien": String(tenSinhVien),
         },
-        UpdateExpression: "#n = :ngaySinh, #a = :avatar",
+        UpdateExpression: "#i = :id, #n = :ngaySinh, #a = :avatar",
         ExpressionAttributeNames: {
+            '#i': 'id',
             '#n': 'ngaySinh',
             '#a': 'avatar'
         },
         ExpressionAttributeValues: {
+            ':id': String(id),
             ':ngaySinh': String(ngaySinh),
             ':avatar': String(avatar)
         },

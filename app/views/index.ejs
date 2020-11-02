@@ -45,7 +45,8 @@
                         <form action="/students/delete/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>" method="POST">
                             <button type="submit">DELETE</button>
                         </form>
-                        <form action="/students/update/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
+                        <!-- /students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar -->
+                        <form action="/students/update/<%= datas[i].id/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
                             <button type="submit">UPDATE</button>
                         </form>
                     </td>

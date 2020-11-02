@@ -24,8 +24,9 @@ router.post('/students/delete/:maSinhVien/:tenSinhVien', ((req, res) => {
     DATA.deleteItem(maSinhVien, tenSinhVien, res);
 }));
 
-router.post('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
+router.post('/students/update/:id/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
     res.render('updateForm', {
+        id: req.params.id,
         maSinhVien: req.params.maSinhVien,
         tenSinhVien: req.params.tenSinhVien,
         ngaySinh: req.params.ngaySinh,
@@ -33,12 +34,13 @@ router.post('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req
     });
 }));
 
-router.post('/students/update/:maSinhVien/:tenSinhVien', ((req, res) => {
+router.post('/students/update/:id/:maSinhVien/:tenSinhVien', ((req, res) => {
+    let id = req.params.id;
     let maSinhVien = req.params.maSinhVien;
     let tenSinhVien = req.params.tenSinhVien;
     let ngaySinh = req.body.ngaySinh;
     let avatar = req.body.avatar;
-    DATA.updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res);
+    DATA.updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
 module.exports = router;
