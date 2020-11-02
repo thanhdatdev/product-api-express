@@ -63,14 +63,12 @@ function updateItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res) {
             "maSinhVien": String(maSinhVien),
             "tenSinhVien": String(tenSinhVien),
         },
-        UpdateExpression: "set #i = :id, #n = :ngaySinh, #a = :avatar",
+        UpdateExpression: "#n = :ngaySinh, #a = :avatar",
         ExpressionAttributeNames: {
-            '#i': 'id',
             '#n': 'ngaySinh',
             '#a': 'avatar'
         },
         ExpressionAttributeValues: {
-            ':id': String(id),
             ':ngaySinh': String(ngaySinh),
             ':avatar': String(avatar)
         },

@@ -20,7 +20,7 @@
             <th>Mã sinh viên</th>
             <th>Tên</th>
             <th>Ngày sinh</th>
-            <th>Avata</th>
+            <th>Avatar</th>
             <th>Action</th>
         </tr>
         <tbody>
@@ -45,7 +45,7 @@
                         <form action="/students/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>" method="post">
                             <button type="submit">DELETE</button>
                         </form>
-                        <form action="/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
+                        <form action="/update/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
                             <button type="submit">UPDATE</button>
                         </form>
                     </td>
