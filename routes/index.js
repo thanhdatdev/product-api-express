@@ -24,11 +24,11 @@ router.post('/students/:maSinhVien/:tenSinhVien', ((req, res) => {
     DATA.deleteItem(maSinhVien, tenSinhVien, res);
 }));
 
-router.post('/update/:masv/:ten/:ngaysinh/:avatar', ((req, res, next) => {
-    res.render('updateForm', { id: req.params.id, masv: req.params.maSinhVien, tenSinhVien: req.params.tenSinhVien, ngaySinh: req.params.ngaySinh, avata: req.params.avatar });
+router.post('/students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((req, res, next) => {
+    res.render('updateForm', { maSinhVien: req.params.maSinhVien, tenSinhVien: req.params.tenSinhVien, ngaySinh: req.params.ngaySinh, avatar: req.params.avatar });
 }));
 
-router.post('/updatestudents/:masv/:ten', ((req, res) => {
+router.post('/students/update/:maSinhVien/:tenSinhVien', ((req, res) => {
     let id = req.body.id;
     let maSinhVien = req.params.maSinhVien;
     let tenSinhVien = req.params.tenSinhVien;
