@@ -43,7 +43,7 @@ router.post('/students/update/:id/:maSinhVien/:tenSinhVien', ((req, res) => {
     DATA.updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
-app.post('/upload-profile-pic', (req, res) => {
+router.post('/upload-profile-pic', (req, res) => {
     let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('profile_pic');
 
     upload(req, res, function(err) {
