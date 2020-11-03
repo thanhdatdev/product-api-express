@@ -12,16 +12,16 @@
         <label>Mã Sinh viên:<input name="maSinhVien" type="text" /></label><br/>
         <label>Tên:<input name="tenSinhVien" type="text" /></label><br/>
         <label>Ngày sinh:<input name="ngaySinh" type="text" /></label><br/>
-        <label>Avatar:
-            <form method="POST" action="/upload-profile-pic" enctype="multipart/form-data">
-                <div>
-                    <label>Select your profile picture:</label>
-        <input type="file" name="profile_pic" />
-        </div>
-    </form>
-    </label><br/>
-    <input type="submit" value="SAVE" />
-    <input type="reset" value="RESET" />
+        <label>Avatar:</label>
+        <form method="POST" action="/upload-profile-pic" enctype="multipart/form-data">
+            <div>
+                <label>Select your profile picture:</label>
+                <input type="file" name="profile_pic" />
+            </div>
+        </form>
+        <br/>
+        <input type="submit" value="SAVE" />
+        <input type="reset" value="RESET" />
     </form>
     <input type="button" onclick="location.href='/'" value="Back" />
 </body>
