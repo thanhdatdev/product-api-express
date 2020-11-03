@@ -39,14 +39,16 @@
                         <%= datas[i].ngaySinh %>
                     </td>
                     <td>
-                        <img src="<%= datas[i].avatar %>">
+                        <img src="/images/<%= datas[i].avatar %>">
                     </td>
                     <td>
                         <form action="/students/delete/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>" method="POST">
                             <button type="submit">DELETE</button>
                         </form>
-                        <!-- /students/update/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar -->
-                        <a href="/students/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="get">UPDATE</a>
+
+                        <form action="/students/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
+                            <button type="submit">UPDATE</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>

@@ -9,10 +9,10 @@
 
 <body>
     <form action="/students/update/<%= maSinhVien %>/<%= tenSinhVien %>" method="post">
-        <input type="text" name="id" value="<%= id %>" readonly="readonly" />
-        <label>Mã Sinh viên:<input name="maSinhVien" type="text" value="<%= maSinhVien %>" readonly="readonly"/></label><br/>
-        <label>Tên:<input name="tenSinhVien" type="text" value="<%= tenSinhVien %>" readonly="readonly"/></label><br/>
-        <label>Ngày sinh:<input name="ngaySinh" type="text" value="<%= ngaySinh %>"  /></label><br/>
+        <input type="text" name="id" value="<%= id %>" readonly="readonly" hidden/>
+        <label>Mã Sinh viên:<input name="maSinhVien" type="text" value="<%= maSinhVien %>"/></label><br/>
+        <label>Tên:<input name="tenSinhVien" type="text" value="<%= tenSinhVien %>"/></label><br/>
+        <label>Ngày sinh:<input name="ngaySinh" type="date" value="<%= ngaySinh %>"  /></label><br/>
         <label>Avata:<input name="avatar" type="text" value="<%= avatar %>" /></label><br/>
 
         <input type="submit" value="UPDATE" />

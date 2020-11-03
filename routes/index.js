@@ -1,5 +1,8 @@
 var express = require('express');
+const path = require('path');
 var router = express.Router();
+const upload = require('../config/helper/uploadMiddleware');
+const Resize = require('../config/helper/Resize');
 const DATA = require('../app/controllers/student_controller');
 
 router.get('/students', function(req, res) {
@@ -10,13 +13,20 @@ router.get('/students/new', ((req, res) => {
     res.render('createForm', { title: 'Create Form' });
 }));
 
-router.post('/students', ((req, res) => {
+router.post('/students', upload.single('avatar'), async function(req, res) {
     let maSinhVien = req.body.maSinhVien;
     let tenSinhVien = req.body.tenSinhVien;
     let ngaySinh = req.body.ngaySinh;
-    let avatar = req.body.avatar;
-    DATA.createItem(maSinhVien, tenSinhVien, ngaySinh, avatar, res);
-}));
+
+    const imagePath = path.join(__dirname + "/../public/images/");
+    const fileUpload = new Resize(imagePath);
+    if (!req.file) {
+        res.status(401).json({ error: 'Please provide an image' });
+    }
+    const filename = await fileUpload.save(req.file.buffer);
+
+    DATA.createItem(maSinhVien, tenSinhVien, ngaySinh, filename, res);
+});
 
 router.post('/students/delete/:maSinhVien/:tenSinhVien', ((req, res) => {
     let maSinhVien = req.params.maSinhVien;
@@ -42,24 +52,5 @@ router.post('/students/update/:id/:maSinhVien/:tenSinhVien', ((req, res) => {
     let avatar = req.body.avatar;
     DATA.updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
-
-router.post('/upload-profile-pic', (req, res) => {
-    let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('profile_pic');
-
-    upload(req, res, function(err) {
-
-        if (req.fileValidationError) {
-            return res.send(req.fileValidationError);
-        } else if (!req.file) {
-            return res.send('Please select an image to upload');
-        } else if (err instanceof multer.MulterError) {
-            return res.send(err);
-        } else if (err) {
-            return res.send(err);
-        }
-
-        res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
-    });
-});
 
 module.exports = router;
