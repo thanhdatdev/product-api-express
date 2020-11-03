@@ -11,17 +11,15 @@
 <body>
 
     <h1>
-        Danh sách sinh viên
+        Danh sách sản phẩm
     </h1>
 
     <table>
         <tr>
             <th>STT</th>
-            <th>Mã sinh viên</th>
+            <th>Mã sản phẩm</th>
             <th>Tên</th>
-            <th>Ngày sinh</th>
-            <th>Avatar</th>
-            <th>Action</th>
+            <th>Số lượng</th>
         </tr>
         <tbody>
             <% for(var i = 0; i < datas.length; i++) { %>
@@ -30,31 +28,19 @@
                         <%= i+1 %>
                     </td>
                     <td>
-                        <%= datas[i].maSinhVien %>
+                        <%= datas[i].maSanPham %>
                     </td>
                     <td>
-                        <%= datas[i].tenSinhVien %>
+                        <%= datas[i].tenSanPham %>
                     </td>
                     <td>
-                        <%= datas[i].ngaySinh %>
-                    </td>
-                    <td>
-                        <img src="/images/<%= datas[i].avatar %>">
-                    </td>
-                    <td>
-                        <form action="/students/delete/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
-                            <button type="submit">DELETE</button>
-                        </form>
-
-                        <form action="/students/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="GET">
-                            <button type="submit">UPDATE</button>
-                        </form>
+                        <%= datas[i].soLuong %>
                     </td>
                 </tr>
                 <% } %>
         </tbody>
     </table>
-    <a href="/students/new">CREATE NEW STUDENT</a><br>
+    <a href="/product/new">CREATE NEW PRODUCT</a><br>
 </body>
 
 </html>

@@ -4,20 +4,16 @@ require('../../database');
 const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient();
 
-const id = uuidv1.v4();
-const maSinhVien = 'SV1';
-const tenSinhVien = 'Nguyễn Lê Thành Đạt';
-const ngaySinh = '21-04-1999';
-const avatar = 'https://www.w3schools.com/howto/img_avatar.png';
+const maSanPham = 'SP1';
+const tenSanPham = 'Máy chiếu'
+const soLuong = 20
 
 const params = {
-    TableName: 'Students',
+    TableName: 'Products',
     Item: {
-        id,
-        maSinhVien,
-        tenSinhVien,
-        ngaySinh,
-        avatar
+        maSanPham,
+        tenSanPham,
+        soLuong
     },
 };
 

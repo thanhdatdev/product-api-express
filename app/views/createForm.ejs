@@ -8,17 +8,15 @@
 </head>
 
 <body>
-    <form action="/students" method="post" enctype="multipart/form-data">
-        <label>Mã Sinh viên:<input name="maSinhVien" type="text" /></label><br/>
-        <label>Tên:<input name="tenSinhVien" type="text" /></label><br/>
-        <label>Ngày sinh:<input name="ngaySinh" type="date" /></label><br/>
-        <label>Select your profile picture:</label>
-        <input type="file" name="avatar" />
-        <br/>
-        <input type="submit" value="SAVE" />
+    <form action="/product" method="post">
+        <label>Mã sản phẩm:<input name="maSanPham" type="text" /></label><br />
+        <label>Tên:<input name="tenSanPham" type="text" /></label><br />
+        <label>Số lượng<input name="soLuong" type="text" /></label><br />
+        <br />
+        <input type="submit" value="LƯU" />
         <input type="reset" value="RESET" />
     </form>
-    <input type="button" onclick="location.href='/students'" value="Back" />
+    <input type="button" onclick="location.href='/'" value="Back" />
 </body>
 
 </html>

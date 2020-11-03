@@ -4,16 +4,26 @@ const AWS = require('aws-sdk');
 let dynamodb = new AWS.DynamoDB();
 
 let params = {
-    TableName: "Students",
-    KeySchema: [
-        { AttributeName: "maSinhVien", KeyType: "HASH" },
-        { AttributeName: "tenSinhVien", KeyType: "RANGE" }
+    TableName: "Products",
+    KeySchema: [{
+            AttributeName: "maSanPham",
+            KeyType: "HASH"
+        },
+        {
+            AttributeName: "tenSanPham",
+            KeyType: "RANGE"
+        }
     ],
 
 
-    AttributeDefinitions: [
-        { AttributeName: "maSinhVien", AttributeType: "S" },
-        { AttributeName: "tenSinhVien", AttributeType: "S" }
+    AttributeDefinitions: [{
+            AttributeName: "maSanPham",
+            AttributeType: "S"
+        },
+        {
+            AttributeName: "tenSanPham",
+            AttributeType: "S"
+        }
     ],
     ProvisionedThroughput: {
         ReadCapacityUnits: 10,
