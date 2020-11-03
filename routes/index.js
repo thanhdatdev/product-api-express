@@ -43,4 +43,23 @@ router.post('/students/update/:id/:maSinhVien/:tenSinhVien', ((req, res) => {
     DATA.updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res);
 }));
 
+app.post('/upload-profile-pic', (req, res) => {
+    let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('profile_pic');
+
+    upload(req, res, function(err) {
+
+        if (req.fileValidationError) {
+            return res.send(req.fileValidationError);
+        } else if (!req.file) {
+            return res.send('Please select an image to upload');
+        } else if (err instanceof multer.MulterError) {
+            return res.send(err);
+        } else if (err) {
+            return res.send(err);
+        }
+
+        res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
+    });
+});
+
 module.exports = router;
