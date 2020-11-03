@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "db:create": "node ./config/initializes/tasks/createTable.js && node ./config/initializes/tasks/createInstanceDefault.js",
-        "start": "nodemon ./bin/www"
+        "start": "node ./bin/www"
     },
     "dependencies": {
         "aws-sdk": "^2.784.0",
