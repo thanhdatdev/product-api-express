@@ -1,5 +1,2 @@
-./node_modules/
 .history/
-node_modules
 dynamodb_local_latest
-config/database.js
