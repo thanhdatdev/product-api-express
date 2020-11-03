@@ -8,12 +8,15 @@
 </head>
 
 <body>
-    <form action="/students/update/<%= maSinhVien %>/<%= tenSinhVien %>" method="post">
+    <form action="/students/update/<%= id %>/<%= maSinhVien %>/<%= tenSinhVien %>/<%= ngaySinh %>/<%= avatar %>" method="post">
         <input type="text" name="id" value="<%= id %>" readonly="readonly" hidden/>
         <label>Mã Sinh viên:<input name="maSinhVien" type="text" value="<%= maSinhVien %>"/></label><br/>
         <label>Tên:<input name="tenSinhVien" type="text" value="<%= tenSinhVien %>"/></label><br/>
         <label>Ngày sinh:<input name="ngaySinh" type="date" value="<%= ngaySinh %>"  /></label><br/>
-        <label>Avata:<input name="avatar" type="text" value="<%= avatar %>" /></label><br/>
+        <label>Avata:<input name="avatar" type="text" value="<%= avatar %>" /></label><br/><br>
+
+        <label>Select your new profile picture:</label>
+        <input type="file" name="avatar" />
 
         <input type="submit" value="UPDATE" />
         <input type="reset" value="RESET" />

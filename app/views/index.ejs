@@ -42,11 +42,11 @@
                         <img src="/images/<%= datas[i].avatar %>">
                     </td>
                     <td>
-                        <form action="/students/delete/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>" method="POST">
+                        <form action="/students/delete/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
                             <button type="submit">DELETE</button>
                         </form>
 
-                        <form action="/students/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="POST">
+                        <form action="/students/update/<%= datas[i].id %>/<%= datas[i].maSinhVien %>/<%= datas[i].tenSinhVien %>/<%= datas[i].ngaySinh %>/<%= datas[i].avatar %>" method="GET">
                             <button type="submit">UPDATE</button>
                         </form>
                     </td>

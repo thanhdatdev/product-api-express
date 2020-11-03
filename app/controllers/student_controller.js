@@ -78,7 +78,7 @@ function updateItem(id, maSinhVien, tenSinhVien, ngaySinh, avatar, res) {
     };
     docClient.update(params, (err, data) => {
         if (err) {
-            console.log("Lỗi không xoá được item");
+            console.log("Lỗi không update được item");
         } else {
             res.redirect('/students');
         }

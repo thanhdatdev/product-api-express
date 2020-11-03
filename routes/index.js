@@ -44,7 +44,7 @@ router.get('/students/update/:id/:maSinhVien/:tenSinhVien/:ngaySinh/:avatar', ((
     });
 }));
 
-router.post('/students/update/:id/:maSinhVien/:tenSinhVien', ((req, res) => {
+router.post('/students/update/:id/:maSinhVien/:tenSinhVien:/ngaySinh/:avatar', ((req, res) => {
     let id = req.params.id;
     let maSinhVien = req.params.maSinhVien;
     let tenSinhVien = req.params.tenSinhVien;

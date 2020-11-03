@@ -5,6 +5,6 @@ AWS.config.update({
 
     //endpoint: "http://dynamodb.ap-southeast-1.amazonaws.com",
     endpoint: "http://localhost:8000",
-    accessKeyId: '',
-    secretAccessKey: ''
+    accessKeyId: 'AKIAJ4O2NKO4SSYMYVHA',
+    secretAccessKey: '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'
 });
